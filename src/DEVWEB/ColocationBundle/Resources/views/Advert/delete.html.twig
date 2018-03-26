@@ -1,0 +1,27 @@
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Supprimer une annonce{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+
+  <h2 id="title">{% trans %}Supprimer une annonce{% endtrans %}</h2>
+  <hr>
+
+  <p>
+    {% trans %}Etes-vous certain de vouloir supprimer l'annonce{% endtrans %} "{{ advert.title }}" ?
+  </p>
+
+  <form action="{{ path('devweb_colocation_delete', {'id': advert.id}) }}" method="post">
+    <a href="{{ path('devweb_colocation_view', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      {% trans %}Retour à l'annonce{% endtrans %}
+    </a>
+
+    <input type="submit" value="{% trans %}Supprimer{% endtrans %}" class="btn btn-danger" />
+
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

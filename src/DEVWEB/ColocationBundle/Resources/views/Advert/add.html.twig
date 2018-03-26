@@ -1,0 +1,23 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/edit.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Ajouter une annonce{% endtrans %}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+
+  <h2 id="title">{% trans %}Ajouter une annonce{% endtrans %}</h2>
+  <hr>
+
+  {{ include("@DEVWEBColocation/Advert/form.html.twig") }}
+
+  <p>
+    <a href="{{ path('devweb_colocation_home')}}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      {% trans %}Retour au menu{% endtrans %}
+    </a>
+  </p>
+
+{% endblock %}

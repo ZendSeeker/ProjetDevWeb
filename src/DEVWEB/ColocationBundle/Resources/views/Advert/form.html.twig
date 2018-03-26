@@ -1,0 +1,70 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/form.html.twig #}
+
+<h3>{% trans %}Formulaire d'annonce{% endtrans %}</h3>
+
+
+<div class="well" id="fond">
+{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+
+ {{ form_errors(form) }}
+
+
+ <div class="form-group">
+
+   {{ form_label(form.title, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+
+   {{ form_errors(form.title) }}
+
+   <div class="col-sm-10">
+     {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+   </div>
+ </div>
+
+
+ <div class="form-group">
+   {{ form_label(form.content, "Description", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+   {{ form_errors(form.content) }}
+   <div class="col-sm-10">
+     {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+   </div>
+ </div>
+
+ <div class="form-group">
+   {{ form_label(form.adress, "Adresse", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+   {{ form_errors(form.adress) }}
+   <div class="col-sm-10">
+     {{ form_widget(form.adress, {'attr': {'class': 'form-control'}}) }}
+   </div>
+ </div>
+
+ <div class="form-group">
+   {{ form_label(form.nbPlaces, "Nombre de Places", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+   {{ form_errors(form.nbPlaces) }}
+   <div class="col-sm-10">
+     {{ form_widget(form.nbPlaces, {'attr': {'class': 'form-control'}}) }}
+   </div>
+ </div>
+
+ <div class="form-group">
+   {{ form_label(form.type, "Type", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+   {{ form_errors(form.type) }}
+   <div class="col-sm-10">
+     {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+   </div>
+ </div>
+
+
+ <div class="form-group">
+   {{ form_label(form.save, "Sauvegarder", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+   <div class="col-sm-10">
+    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+   </div>
+ </div>
+
+
+ {{ form_rest(form) }}
+
+
+ {{ form_end(form) }}</div>

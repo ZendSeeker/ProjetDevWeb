@@ -1,0 +1,55 @@
+devweb_colocation_home:
+    path:      /
+    defaults:
+      _controller: DEVWEBColocationBundle:Advert:index
+      page: 1
+    requirements:
+      page: \d*
+
+devweb_colocation_view:
+    path:      /advert/{id}
+    defaults:
+      _controller: DEVWEBColocationBundle:Advert:view
+    requirements:
+      id: \d+
+
+devweb_colocation_add:
+    path:      /add
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:add
+
+devweb_colocation_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:edit
+    requirements:
+        id: \d+
+
+devweb_colocation_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:delete
+    requirements:
+        id: \d+
+
+devweb_colocation_postuler:
+    path:      /postuler/{id}
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:postuler
+    requirements:
+        id: \d+
+
+devweb_colocation_search:
+    path:      /search
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:search
+
+devweb_colocation_param:
+    path:      /param
+    defaults:
+        _controller: DEVWEBColocationBundle:Advert:param
+
+devweb_colocation_feed:
+  path:      /feed
+  defaults:
+      _controller: DEVWEBColocationBundle:Advert:feed

@@ -1,0 +1,46 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Annonces{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<style>
+h1 {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+}
+h2 {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+}
+h3 {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+}
+h4 {
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+}
+p {
+    color: white;
+    font-style: italic;
+}
+i {
+    color: white;
+    font-style: italic;
+}
+a {
+    color: white;
+    font-style: italic;
+}
+#fond {
+  background: rgba(0, 0, 0, 0.5);
+}
+</style>
+
+
+
+  {% block devwebcolocation_body %}
+  {% endblock %}
+{% endblock %}

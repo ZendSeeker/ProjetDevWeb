@@ -1,0 +1,45 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/param.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Paramètres du site{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+
+  <h2 id="title">{% trans %}Paramètres du site{% endtrans %}</h2>
+  <hr>
+
+  <div class="well" id="fond">
+    <h5><i class="glyphicon glyphicon-globe"></i>
+        <small><b>{% trans %}Langues{% endtrans %}</b></small>
+    </h5>
+    <ul class="nav nav-pills nav-stacked">
+      <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}" class="btn btn-default">
+        {% trans %}Français{% endtrans %}
+      </a>
+      <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}" class="btn btn-default">
+        {% trans %}English{% endtrans %}
+      </a>
+    </ul>
+    <h5><i class="glyphicon glyphicon-eye-open"></i>
+        <small><b>{% trans %}Thèmes{% endtrans %}</b></small>
+    </h5>
+    <ul class="nav nav-pills nav-stacked">
+    {{ form_start(form, {
+      'attr' : {'class': 'navbar-form'}
+    }) }}
+      {{ form_widget(form.parametre, {
+        'attr': {'class': 'form-control search-query'}
+      }) }}
+      {{ form_widget(form.Changer, {
+        'attr': {'class': 'form-control search-query'}
+      }) }}
+
+    {{ form_end(form) }}
+
+    </ul>
+  </div>
+
+{% endblock %}

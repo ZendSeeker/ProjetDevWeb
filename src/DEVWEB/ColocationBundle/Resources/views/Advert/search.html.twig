@@ -1,0 +1,29 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/search.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block devwebcolocation_body %}
+
+{{ form_start(form, {
+  'attr' : {'class': 'navbar-form'}
+}) }}
+
+  {{ form_widget(form.search, {
+    'attr': {'class': 'form-control search-query'}
+  }) }}
+
+{{ form_end(form) }}
+
+<table class="table table-bordered table-striped">
+<tr>
+  <th> {% trans %}Titre l'annonce{% endtrans %} </th>
+  <th> {% trans %}Auteur{% endtrans %} </th>
+  <th> {% trans %}Propriété{% endtrans %} </th>
+  <th> {% trans %}Adresse{% endtrans %} </th>
+  <th> {% trans %}Places disponibles{% endtrans %} </th>
+</tr>
+    {% for Advert in listAdverts %}
+    <tr class="active"> <td><a href="{{ path('devweb_colocation_view', {'id': Advert.id}) }}"> {{ Advert.title }} </a></td> <td> {{ Advert.author }} </td> <td> {{ Advert.type }} </td> <td> {{ Advert.adress }} </td> <td> {{ Advert.nbPlaces }} </td> </tr>
+    {% endfor %}
+ </table>
+{% endblock %}

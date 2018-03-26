@@ -1,0 +1,27 @@
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Postuler à une annonce{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+
+  <h2 id="title">{% trans %}Postuler à une annonce{% endtrans %}</h2>
+  <hr>
+
+  <p>
+    {% trans %}Etes-vous certain de vouloir postuler à cette annonce ?{% endtrans %} "{{ advert.title }}" ?
+  </p>
+
+  <form action="{{ path('devweb_colocation_postuler', {'id': advert.id}) }}" method="post">
+    <a href="{{ path('devweb_colocation_view', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      {% trans %}Retour à l'annonce{% endtrans %}
+    </a>
+
+    <input type="submit" value="{% trans %}Postuler{% endtrans %}" class="btn btn-success" />
+
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

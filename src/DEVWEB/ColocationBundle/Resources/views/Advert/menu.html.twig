@@ -1,0 +1,11 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/menu.html.twig #}
+
+<ul class="nav nav-pills nav-stacked">
+  {% for advert in listAdverts %}
+    <li>
+      <a id="title" href="{{ path('devweb_colocation_view', {'id': advert.id}) }}">
+        {{ advert.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

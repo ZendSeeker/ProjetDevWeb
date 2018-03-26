@@ -1,0 +1,43 @@
+{# src/DEVWEB/ColocationBundle/Resources/view/Advert/view.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Lecture d'une annonce{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+  <h2 id="title">{{ advert.title }}</h2>
+  <i>{% trans %}Par{% endtrans %} {{ advert.author }}, {% trans %}le{% endtrans %} {{ advert.date|date('d/m/Y') }}</i>
+
+  <div id="infosannonces" class="well">
+    <h5>{% trans %}Description de l'annonce{% endtrans %} : {{ advert.content }}</h5>
+    <h5>{% trans %}Adresse de la propriété{% endtrans %} : {{ advert.adress }}</h5>
+    <h5>{% trans %}Nombre de places disponibles{% endtrans %} : {{ advert.nbPlaces }}</h5>
+    <h5>{% trans %}Type de propriété{% endtrans %} : {{ advert.type }}</h5>
+  </div>
+
+  <p>
+  <a href="{{ path('devweb_colocation_home') }}" class="btn btn-info">
+    <i class="glyphicon glyphicon-chevron-left"></i>
+    {% trans %}Retour à la page d'accueil{% endtrans %}
+  </a>
+  {% if affichage == true %}
+      <a href="{{ path('devweb_colocation_edit', {'id': advert.id}) }}" class="btn btn-info">
+        <i class="glyphicon glyphicon-edit"></i>
+        {% trans %}Modifier l'annonce{% endtrans %}
+      </a>
+      <a href="{{ path('devweb_colocation_delete', {'id': advert.id}) }}" class="btn btn-danger">
+        <i class="glyphicon glyphicon-trash"></i>
+        {% trans %}Supprimer l'annonce{% endtrans %}
+      </a>
+  {% endif %}
+  {% if postule == true %}
+    <a href="{{ path('devweb_colocation_postuler', {'id': advert.id}) }}" class="btn btn-success">
+      <i class="glyphicon glyphicon-check"></i>
+      {% trans %}Postuler à l'annonce{% endtrans %}
+    </a>
+  {% endif %}
+  </p>
+
+{% endblock %}

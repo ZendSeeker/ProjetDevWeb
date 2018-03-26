@@ -1,0 +1,7 @@
+services:
+    devweb_colocation.antispam:
+        class: DEVWEB\ColocationBundle\Antispam\DEVWEBAntispam
+        arguments:
+            - "@mailer"
+            - %locale%
+            - 50

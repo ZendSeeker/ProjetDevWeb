@@ -1,0 +1,27 @@
+{# src/DEVWEB/ColocationBundle/Resources/views/Advert/edit.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Modifier une annonce{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+
+  <h2 id="title">{% trans %}Modifier une annonce{% endtrans %}</h2>
+  <hr>
+
+  {{ include("@DEVWEBColocation/Advert/form.html.twig") }}
+
+  <p>
+    {% trans %}Vous éditez une annonce déjà existante, merci de ne pas changer l'esprit général de l'annonce déjà publiée.{% endtrans %}
+  </p>
+
+  <p>
+    <a href="{{ path('devweb_colocation_view', {'id': advert.id}) }}" class="btn btn-default">
+      <i class="glyphicon glyphicon-chevron-left"></i>
+      {% trans %}Retour à l'annonce{% endtrans %}
+    </a>
+  </p>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{# src/DEV/ColocationBundle/Resources/views/Advert/index.html.twig #}
+
+{% extends "@DEVWEBColocation/layout.html.twig" %}
+
+{% block title %}
+  {% trans %}Accueil{% endtrans %} - {{ parent() }}
+{% endblock %}
+
+{% block devwebcolocation_body %}
+  <h2 id="title">{% trans %}Liste des annonces{% endtrans %}</h2>
+  <hr>
+
+  <ul>
+    {% for advert in listAdverts %}
+      <li id="title">
+        <b><a  id="title" href="{{ path('devweb_colocation_view', {'id': advert.id}) }}">
+          {{ advert.title }}
+        </a></b>
+        {% trans %}par{% endtrans %} {{ advert.author }},
+        {% trans %}le{% endtrans %} {{ advert.date|date('d/m/Y') }}
+      </li>
+    {% else %}
+    <li id="title">{% trans %}Pas (encore !) d'annonces{% endtrans %}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
